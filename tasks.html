@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferienwohnung Aufgaben</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Newsreader:opsz,wght@6..72,400;6..72,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-shape bg-shape-a"></div>
+  <div class="bg-shape bg-shape-b"></div>
+
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Ferienwohnung</p>
+        <h1>Aufgaben-Board</h1>
+      </div>
+      <div class="top-actions">
+        <div class="account-chip" id="currentUserBadge" aria-live="polite"></div>
+        <button id="logoutBtn" class="text-btn" type="button">Abmelden</button>
+        <a class="ghost-btn link-btn" href="index.html">Zur Startseite</a>
+      </div>
+    </header>
+
+    <section class="card tasks-card" aria-live="polite">
+      <div class="tasks-header">
+        <h3>Aktuelle Aufgaben</h3>
+        <p id="taskSummary">0 offen, 0 erledigt</p>
+      </div>
+
+      <form id="taskForm" class="task-form">
+        <label for="taskTitle">Neue Aufgabe</label>
+        <input id="taskTitle" type="text" maxlength="120" required placeholder="z. B. Schlüsselbox Batterien prüfen" />
+
+        <label for="taskDueDate">Fällig am (optional)</label>
+        <input id="taskDueDate" type="date" />
+
+        <button class="ghost-btn" type="submit">Aufgabe erstellen</button>
+      </form>
+
+      <ul id="taskList" class="task-list"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

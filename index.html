@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tankumsee Verfügbarkeit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Newsreader:opsz,wght@6..72,400;6..72,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-shape bg-shape-a"></div>
+  <div class="bg-shape bg-shape-b"></div>
+
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Ferienhaus</p>
+        <h1>Tankumsee</h1>
+      </div>
+      <div class="top-actions">
+        <div class="account-chip" id="currentUserBadge" aria-live="polite"></div>
+        <button id="logoutBtn" class="text-btn" type="button">Abmelden</button>
+        <button id="todayBtn" class="ghost-btn" type="button">Heute</button>
+      </div>
+    </header>
+
+    <section class="card hub-card">
+      <h3>Schnellnavigation</h3>
+      <p class="intro-text">Die Kalenderansicht ist deine Startseite. Von hier gelangst du zu allen weiteren Bereichen.</p>
+      <div class="hub-links">
+        <a class="ghost-btn link-btn" href="tasks.html">Zu Aufgaben</a>
+        <a class="ghost-btn link-btn" href="cards.html">Zur Kartenliste</a>
+        <a class="ghost-btn link-btn" href="checklist.html">Abreise-Checklist</a>
+        <a class="ghost-btn link-btn" href="news.html">News bearbeiten</a>
+        <a id="adminAccountsLink" class="ghost-btn link-btn hidden" href="accounts.html">Accounts verwalten</a>
+      </div>
+    </section>
+
+    <section class="card news-card" aria-live="polite">
+      <div class="news-header">
+        <h3>Aktuelle News & Hinweise</h3>
+      </div>
+      <ul id="homeNewsList" class="news-list"></ul>
+    </section>
+
+    <section class="calendar-layout">
+      <section class="card calendar-card">
+        <div class="calendar-toolbar">
+          <button id="prevMonth" class="icon-btn" aria-label="Vorheriger Monat" type="button">&#10094;</button>
+          <div class="calendar-center">
+            <h2 id="monthLabel"></h2>
+            <a class="ghost-btn link-btn calendar-add-btn" href="stay.html">+ Neuer Eintrag</a>
+          </div>
+          <button id="nextMonth" class="icon-btn" aria-label="Nächster Monat" type="button">&#10095;</button>
+        </div>
+
+        <div class="legend" aria-label="Legende">
+          <span><i class="dot available"></i> Frei</span>
+          <span><i class="dot tentative"></i> Vormerken</span>
+          <span><i class="dot fixed"></i> Fest geplant</span>
+        </div>
+
+        <div class="weekdays" id="weekdayRow"></div>
+        <div class="calendar-grid" id="calendarGrid"></div>
+      </section>
+    </section>
+
+    <section class="card details-card" aria-live="polite">
+      <h3>Details zum Tag</h3>
+      <p id="selectedDate">Kein Datum ausgewählt.</p>
+      <p id="selectedStatus">Klicke auf einen Kalendertag.</p>
+      <ul id="selectedStaysList" class="news-list"></ul>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

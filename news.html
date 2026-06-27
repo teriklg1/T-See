@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferienwohnung News</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Newsreader:opsz,wght@6..72,400;6..72,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-shape bg-shape-a"></div>
+  <div class="bg-shape bg-shape-b"></div>
+
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Ferienwohnung</p>
+        <h1>News bearbeiten</h1>
+      </div>
+      <div class="top-actions">
+        <div class="account-chip" id="currentUserBadge" aria-live="polite"></div>
+        <button id="logoutBtn" class="text-btn" type="button">Abmelden</button>
+        <a class="ghost-btn link-btn" href="index.html">Zur Startseite</a>
+      </div>
+    </header>
+
+    <section class="card news-manage-card" aria-live="polite">
+      <div class="news-header">
+        <h3>News-Verwaltung</h3>
+        <p>Erstellen, bearbeiten und löschen</p>
+      </div>
+
+      <form id="newsForm" class="news-form">
+        <div class="form-head">
+          <p id="newsFormTitle">Neuen Hinweis erstellen</p>
+          <button id="newsCancelEditBtn" class="text-btn hidden" type="button">Bearbeiten abbrechen</button>
+        </div>
+
+        <p id="newsAuthorFixed" class="auth-hint"></p>
+
+        <label for="newsMessage">Kommentar / Info</label>
+        <textarea id="newsMessage" rows="3" maxlength="240" required placeholder="Allgemeine Info für alle Beteiligten"></textarea>
+
+        <label for="newsPriority">Priorität</label>
+        <select id="newsPriority">
+          <option value="normal">Normal</option>
+          <option value="important">Wichtig</option>
+        </select>
+
+        <label class="inline-check"><input id="newsPinned" type="checkbox" /> Anpinnen (dauerhaft oben anzeigen)</label>
+
+        <button id="newsSubmitBtn" class="ghost-btn" type="submit">Kommentar speichern</button>
+      </form>
+
+      <ul id="newsManagerList" class="news-list"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

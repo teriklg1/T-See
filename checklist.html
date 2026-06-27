@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tankumsee Abreise-Checklist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Newsreader:opsz,wght@6..72,400;6..72,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-shape bg-shape-a"></div>
+  <div class="bg-shape bg-shape-b"></div>
+
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Tankumsee</p>
+        <h1>Abreise-Checklist</h1>
+      </div>
+      <div class="top-actions">
+        <div class="account-chip" id="currentUserBadge" aria-live="polite"></div>
+        <button id="logoutBtn" class="text-btn" type="button">Abmelden</button>
+        <a class="ghost-btn link-btn" href="index.html">Zur Startseite</a>
+      </div>
+    </header>
+
+    <section class="card checklist-card" aria-live="polite">
+      <div class="news-header">
+        <h3>Vor der Abreise erledigen</h3>
+      </div>
+
+      <ul id="checklistList" class="news-list"></ul>
+
+      <form id="checklistForm" class="news-form hidden">
+        <label for="checklistNewItem">Neuer Punkt</label>
+        <input id="checklistNewItem" type="text" maxlength="140" placeholder="z. B. Schlüssel im Safe hinterlegen" required />
+        <button class="ghost-btn" type="submit">Punkt hinzufügen</button>
+      </form>
+
+      <p id="checklistAdminHint" class="permission-note hidden">Nur Admins können die Liste bearbeiten oder neue Punkte anlegen.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

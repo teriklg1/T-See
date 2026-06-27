@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferienwohnung Aufenthalt planen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Newsreader:opsz,wght@6..72,400;6..72,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-shape bg-shape-a"></div>
+  <div class="bg-shape bg-shape-b"></div>
+
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Ferienwohnung</p>
+        <h1>Aufenthalt planen</h1>
+      </div>
+      <div class="top-actions">
+        <div class="account-chip" id="currentUserBadge" aria-live="polite"></div>
+        <button id="logoutBtn" class="text-btn" type="button">Abmelden</button>
+        <a class="ghost-btn link-btn" href="index.html">Zur Startseite</a>
+      </div>
+    </header>
+
+    <section class="card planner-card" aria-live="polite">
+      <h3>Neuen Aufenthalt planen</h3>
+      <p id="stayCreatorHint" class="task-meta"></p>
+      <form id="stayForm" class="news-form">
+        <label for="stayTitle">Name des Aufenthalts</label>
+        <input id="stayTitle" type="text" maxlength="100" required placeholder="z. B. Herbstwochenende" />
+
+        <label for="stayStartDate">Startdatum</label>
+        <input id="stayStartDate" type="date" required />
+
+        <label for="stayEndDate">Enddatum</label>
+        <input id="stayEndDate" type="date" required />
+
+        <label for="stayStatus">Status</label>
+        <select id="stayStatus">
+          <option value="tentative">Vormerken</option>
+          <option value="fixed">Fest geplant</option>
+        </select>
+
+        <label for="stayDescription">Beschreibung (optional)</label>
+        <textarea id="stayDescription" rows="3" maxlength="240" placeholder="Kurze Info zum Aufenthalt"></textarea>
+
+        <label>Teilnehmer aus Accounts</label>
+        <div id="stayParticipantsUsers" class="participants-grid"></div>
+
+        <label for="stayGuestName">Gast hinzufügen</label>
+        <div class="inline-action">
+          <input id="stayGuestName" type="text" maxlength="80" placeholder="Name des Gasts" />
+          <button id="addGuestBtn" class="mini-btn soft" type="button">Gast adden</button>
+        </div>
+        <ul id="stayGuestsList" class="news-list compact-list"></ul>
+
+        <div class="editor-actions">
+          <button id="saveStayBtn" class="ghost-btn" type="submit">Aufenthalt speichern</button>
+          <button id="cancelStayEditBtn" class="text-btn hidden" type="button">Bearbeiten abbrechen</button>
+          <button id="deleteStayBtn" class="mini-btn warn hidden" type="button">Eintrag löschen</button>
+        </div>
+        <p id="stayFormMessage" class="auth-error"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

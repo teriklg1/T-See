@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferienwohnung Kartenliste</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Newsreader:opsz,wght@6..72,400;6..72,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-shape bg-shape-a"></div>
+  <div class="bg-shape bg-shape-b"></div>
+
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Ferienwohnung</p>
+        <h1>Liste der Karten</h1>
+      </div>
+      <div class="top-actions">
+        <div class="account-chip" id="currentUserBadge" aria-live="polite"></div>
+        <button id="logoutBtn" class="text-btn" type="button">Abmelden</button>
+        <a class="ghost-btn link-btn" href="index.html">Zur Startseite</a>
+      </div>
+    </header>
+
+    <section class="card cards-card">
+      <h3>Karten-Übersicht</h3>
+      <p class="intro-text">Vergib gelbe oder rote Karten mit Datum, Person und Vorfall. Das Leaderboard zeigt auffällige Muster.</p>
+
+      <form id="incidentForm" class="incident-form">
+        <div class="form-head">
+          <p id="incidentFormTitle">Neue Karte erfassen</p>
+          <button id="incidentCancelEditBtn" class="text-btn hidden" type="button">Bearbeiten abbrechen</button>
+        </div>
+
+        <label for="incidentDate">Datum</label>
+        <input id="incidentDate" type="date" required />
+
+        <label for="incidentPerson">Name der Person</label>
+        <input id="incidentPerson" type="text" maxlength="80" required placeholder="z. B. Max Mustermann" />
+
+        <label for="incidentType">Kartenfarbe</label>
+        <select id="incidentType" required>
+          <option value="yellow">Gelbe Karte</option>
+          <option value="red">Rote Karte</option>
+        </select>
+
+        <label for="incidentDescription">Beschreibung des Vorfalls</label>
+        <textarea id="incidentDescription" rows="3" maxlength="240" required placeholder="Kurze Beschreibung"></textarea>
+
+        <button id="incidentSubmitBtn" class="ghost-btn" type="submit">Karte erfassen</button>
+      </form>
+
+      <div class="incident-toolbar">
+        <label><input id="filterAllCards" type="radio" name="cardFilter" value="all" checked /> Alle</label>
+        <label><input id="filterYellowCards" type="radio" name="cardFilter" value="yellow" /> Nur Gelb</label>
+        <label><input id="filterRedCards" type="radio" name="cardFilter" value="red" /> Nur Rot</label>
+      </div>
+
+      <div class="cards-layout">
+        <section class="leaderboard-panel">
+          <h4>Leaderboard</h4>
+          <ul id="statsList" class="stats-list"></ul>
+        </section>
+
+        <section class="incident-list-panel">
+          <h4>Vorfallsliste</h4>
+          <ul id="incidentList" class="incident-list"></ul>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
